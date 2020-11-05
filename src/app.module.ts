@@ -7,6 +7,8 @@ import { FundModule } from './fund/fund.module';
 import { FundEntity } from './fund/fund.entity'
 import { SharesModule } from './shares/shares.module';
 import { SharesEntity } from './shares/shares.entity';
+import { ChartEntity } from './chart/chart.entity';
+import { ChartModule } from './chart/chart.module';
 
 @Module({
   imports: [
@@ -18,10 +20,11 @@ import { SharesEntity } from './shares/shares.entity';
       "password": "123456",
       "database": "fund_db",
       "synchronize": true,
-      "entities": [FundEntity, SharesEntity]
+      "entities": [FundEntity, SharesEntity, ChartEntity]
     }),
     FundModule,
-    SharesModule
+    SharesModule,
+    ChartModule
   ],
   controllers: [AppController],
   providers: [AppService],

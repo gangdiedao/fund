@@ -122,7 +122,7 @@ export class FundController {
         this.fundService.clear()
         let size = 30
         let res = []
-        for(let p = 1; p < 6; p++) {
+        for(let p = 1; p < 50; p++) {
           let url = `https://fundmobapi.eastmoney.com/FundMNewApi/FundMNRankNewList?callback=jQuery31107742468908593421_1589627389972&fundtype=0&SortColumn=SYL_1N&Sort=desc&pageIndex=${p}&pagesize=${size}&companyid=&deviceid=Wap&plat=Wap&product=EFund&version=2.0.0&Uid=&_=1589627389978`
           let fundList: any = await fetchFund(url)
           fundList = fundList.filter(item => item['FUNDTYPE'] == '001' || item['FUNDTYPE'] == '002')
